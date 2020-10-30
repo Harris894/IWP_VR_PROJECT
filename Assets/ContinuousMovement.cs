@@ -23,7 +23,6 @@ public class ContinuousMovement : MonoBehaviour
         rig = GetComponent<XRRig>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         InputDevice device = InputDevices.GetDeviceAtXRNode(inputSource);
