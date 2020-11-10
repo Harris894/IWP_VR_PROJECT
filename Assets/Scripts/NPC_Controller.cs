@@ -1,8 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Net.Http.Headers;
-using System.Net.Sockets;
-using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -15,11 +12,9 @@ public class NPC_Controller : MonoBehaviour
     private NavMeshAgent agent;
     private Animator anim;
 
-    public bool walk;
-    public bool leave;
-    public bool talk;
+    private bool walk;
+    private bool leave;
 
-    // Start is called before the first frame update
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -27,6 +22,11 @@ public class NPC_Controller : MonoBehaviour
         targetLocationLeave = this.transform.position;
     }
 
+
+    /// <summary>
+    /// Mostly checking if agent has reached destination.
+    /// If reached, change animation states
+    /// </summary>
     private void Update()
     {
         if (walk)
@@ -51,32 +51,34 @@ public class NPC_Controller : MonoBehaviour
         
     }
 
-
+    /// <summary>
+    /// Initializes approach to counter 
+    /// </summary>
     public void InitApproachToCounter()
-    {
-        
+    {   
         anim.SetBool("walk", true);
         agent.SetDestination(targetLocationApproach.position);
-        transform.LookAt(playerPos);
         walk = true;
-        
     }
 
+    /// <summary>
+    /// Initializes leave from counter 
+    /// </summary>
     public void InitLeave()
     {
         anim.SetBool("talk", false);
         anim.SetBool("leave", true);
         StartCoroutine(TurnAround());
-
-        //leave = true;
-        
     }
 
+    /// <summary>
+    /// Makes sure the NPC has played the turning animation and 
+    /// has left the location before checking if new remaining distance < 0.1f
+    /// </summary>
     IEnumerator TurnAround()
     {
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.28f);
         agent.SetDestination(targetLocationLeave);
-        transform.LookAt(targetLocationLeave);
         yield return new WaitForSeconds(0.2f);
         leave = true;
     }
