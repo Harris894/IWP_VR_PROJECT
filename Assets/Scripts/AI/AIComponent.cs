@@ -9,7 +9,7 @@ public class AIComponent : MonoBehaviour, IWeaponTarget, IEventSource
     public SensorySystem sensorySystem;
     public AIEventHandler eventHandler;
 
-    internal AIState currentState = AIState.IDLE;
+    internal AIState currentState = AIState.WAITING_FOR_TURN;
     internal IEventSource currentTarget;
 
     Animator animatorController;

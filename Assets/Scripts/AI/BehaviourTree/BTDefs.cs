@@ -28,9 +28,7 @@ public enum BTResult
 //Failing to do so will reorder the enum and mess up the values you set in the scene!!
 public enum BehaviourTreeType
 {
-    GUARD,
-    LUMBERJACK,
-    ANIMAL_IDLE,
+    CUSTOMER,
     //Add stuff here
     COUNT,
 }
@@ -45,8 +43,13 @@ public enum HasOp
 
 public enum IsOp
 {
-    IDLE,
-    HOSTILE,
+    WAITING_FOR_TURN,
+    WAITING_FOR_ORDER,
+    CHOOSING_MEAL,
+    ORDERING,
+    REACTING,
+    CONSUMING,
+    LEAVING
 }
 
 public enum PathType

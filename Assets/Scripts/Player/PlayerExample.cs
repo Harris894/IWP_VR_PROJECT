@@ -8,14 +8,14 @@ public class PlayerExample : Singleton<PlayerExample>, IEventSource
     public float sprintSpeed = 10;
     public float gravity = 100;
     CharacterController characterController;
-    Animator animatorController;
+    // Animator animatorController;
     WeaponComponent weaponComponent;
 
 
     private void Start()
     {
         characterController = GetComponent<CharacterController>();
-        animatorController = GetComponent<Animator>();
+        // animatorController = GetComponent<Animator>();
         weaponComponent = GetComponent<WeaponComponent>();
     }
 
@@ -29,10 +29,10 @@ public class PlayerExample : Singleton<PlayerExample>, IEventSource
     {
         if (Input.GetButton("Attack"))
         {
-            animatorController.SetTrigger("Attack");
+            // animatorController.SetTrigger("Attack");
             weaponComponent.SetWeaponActive();
         }
-        else animatorController.ResetTrigger("Attack");
+        // else animatorController.ResetTrigger("Attack");
     }
 
     void HandleMovement()
@@ -42,15 +42,15 @@ public class PlayerExample : Singleton<PlayerExample>, IEventSource
         float speed = Input.GetButton("Sprint") ? sprintSpeed : movementSpeed;
 
 
-        if (forwardMovement == 0)
-        {
-            animatorController.SetInteger("State", 0);
-        }
-        else if (speed == sprintSpeed)
-        {
-            animatorController.SetInteger("State", 2);
-        }
-        else animatorController.SetInteger("State", 1);
+        // if (forwardMovement == 0)
+        // {
+        //     animatorController.SetInteger("State", 0);
+        // }
+        // else if (speed == sprintSpeed)
+        // {
+        //     animatorController.SetInteger("State", 2);
+        // }
+        // else animatorController.SetInteger("State", 1);
 
       
         Vector3 moveDirection = (-transform.forward * forwardMovement) + (-transform.up * gravity * Time.deltaTime);

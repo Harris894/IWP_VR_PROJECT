@@ -27,13 +27,15 @@ public class AIGeneralDebugView : AIDebugView
 
         switch (owningAgent.currentState)
         {
-            case AIState.IDLE:
+            case AIState.WAITING_FOR_TURN:
+            case AIState.WAITING_FOR_ORDER:
                 debugStyle.normal.textColor = Color.green;
                 break;
-            case AIState.ALERT:
+            case AIState.ORDERING:
                 debugStyle.normal.textColor = Color.yellow;
                 break;
-            case AIState.HOSTILE:
+            case AIState.REACTING:
+            case AIState.LEAVING:
                 debugStyle.normal.textColor = Color.red;
                 break;
             default:

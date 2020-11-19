@@ -43,7 +43,7 @@ public class SensorySystem
 
             if (targetLostTimer >= targetLostMaxTime)
             {
-                aiComponent.currentState = AIState.IDLE;
+                aiComponent.currentState = AIState.WAITING_FOR_TURN;
                 navAgent.ResetPath();
                 aiComponent.currentTarget = null;
                 targetLostTimer = 0;

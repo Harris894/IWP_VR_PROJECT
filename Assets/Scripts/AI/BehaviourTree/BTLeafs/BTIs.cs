@@ -7,10 +7,20 @@ public class BTIs : BTNode
     {
         switch (isOperation)
         {
-            case IsOp.IDLE:
-                return context.contextOwner.currentState == AIState.IDLE ? BTResult.SUCCESS : BTResult.FAILURE;
-            case IsOp.HOSTILE:
-                return context.contextOwner.currentState == AIState.HOSTILE ? BTResult.SUCCESS : BTResult.FAILURE;
+            case IsOp.WAITING_FOR_TURN:
+                return context.contextOwner.currentState == AIState.WAITING_FOR_TURN ? BTResult.SUCCESS : BTResult.FAILURE;
+            case IsOp.WAITING_FOR_ORDER:
+                return context.contextOwner.currentState == AIState.WAITING_FOR_ORDER ? BTResult.SUCCESS : BTResult.FAILURE;
+            case IsOp.CHOOSING_MEAL:
+                return context.contextOwner.currentState == AIState.CHOOSING_MEAL ? BTResult.SUCCESS : BTResult.FAILURE;
+            case IsOp.ORDERING:
+                return context.contextOwner.currentState == AIState.ORDERING ? BTResult.SUCCESS : BTResult.FAILURE;
+            case IsOp.REACTING:
+                return context.contextOwner.currentState == AIState.REACTING ? BTResult.SUCCESS : BTResult.FAILURE;
+            case IsOp.CONSUMING:
+                return context.contextOwner.currentState == AIState.CONSUMING ? BTResult.SUCCESS : BTResult.FAILURE;
+            case IsOp.LEAVING:
+                return context.contextOwner.currentState == AIState.LEAVING ? BTResult.SUCCESS : BTResult.FAILURE;
             default:
                 break;
         }

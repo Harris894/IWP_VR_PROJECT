@@ -37,7 +37,7 @@ public class AIEventHandler
     void ProcessHits()
     {
         animatorController.SetTrigger("Hurt");
-        aiComponent.currentState = AIState.HOSTILE;
+        aiComponent.currentState = AIState.REACTING;
         navAgent.ResetPath();
 
         foreach (TargetHitInfo _hitInfo in unprocessedHitInfoList)
@@ -65,9 +65,9 @@ public class AIEventHandler
             {
                 case StimType.HURT:
                 case StimType.THREATENING_SOUND:
-                    if (aiComponent.currentState != AIState.HOSTILE)
+                    if (aiComponent.currentState != AIState.REACTING)
                     {
-                        aiComponent.currentState = AIState.HOSTILE;
+                        aiComponent.currentState = AIState.REACTING;
                         aiComponent.currentTarget = _event.eventInstigator;
                         navAgent.ResetPath();
                     }
