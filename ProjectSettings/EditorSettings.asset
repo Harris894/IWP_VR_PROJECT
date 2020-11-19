@@ -16,7 +16,11 @@ EditorSettings:
   m_EtcTextureFastCompressor: 1
   m_EtcTextureNormalCompressor: 2
   m_EtcTextureBestCompressor: 4
+<<<<<<< HEAD
   m_ProjectGenerationIncludedExtensions: txt;xml;fnt;cd;asmdef;rsp;asmref
+=======
+  m_ProjectGenerationIncludedExtensions: txt;xml;fnt;cd;asmdef;asmref;rsp
+>>>>>>> HarrisDevelopment
   m_ProjectGenerationRootNamespace: 
   m_CollabEditorSettings:
     inProgressEnabled: 1

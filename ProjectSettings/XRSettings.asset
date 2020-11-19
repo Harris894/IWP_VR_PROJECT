@@ -4,7 +4,12 @@
         "VR Device User Alert"
     ],
     "m_SettingValues": [
+<<<<<<< HEAD
         "False",
         "False"
+=======
+        "True",
+        "True"
+>>>>>>> HarrisDevelopment
     ]
 }
