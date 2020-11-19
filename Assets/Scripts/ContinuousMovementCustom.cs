@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.XR;
 using UnityEngine.XR.Interaction.Toolkit;
 
-public class ContinuousMovement : MonoBehaviour
+public class ContinuousMovementCustom : MonoBehaviour
 {
     public float speed = 1;
     public XRNode inputSource;
