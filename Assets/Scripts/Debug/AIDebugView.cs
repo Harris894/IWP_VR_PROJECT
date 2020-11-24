@@ -4,11 +4,11 @@ using UnityEngine;
 
 public abstract class AIDebugView : MonoBehaviour
 {
-    public KeyCode activationKey;
+    public bool showDebug;
+    public Camera m_MainCamera;
 
     List<BTContextData> allContextsList;
     BehaviourTreeManager behaviourTreeManager;
-    Camera activeCamera;
     Rect debugViewRect = new Rect();
 
     protected bool viewActive;
@@ -23,7 +23,6 @@ public abstract class AIDebugView : MonoBehaviour
     private void Start()
     {
         behaviourTreeManager = BehaviourTreeManager.GetInstance();
-        activeCamera = CameraFollow.activeCamera;
         debugStyle.fontSize = 30;
         debugStyle.normal.textColor = Color.green;
     }
@@ -49,23 +48,23 @@ public abstract class AIDebugView : MonoBehaviour
 
     private void HandleInputs()
     {
-        if (Input.GetKeyDown(activationKey))
+        if (showDebug)
         {
             ToggleView();
         }
 
         if (viewActive)
         {
-            if (Input.GetKeyDown(KeyCode.Period))
-            {
-                ++activeContextIndex;
-                if (activeContextIndex > allContextsList.Count - 1) { activeContextIndex = 0; }
-            }
-            else if (Input.GetKeyDown(KeyCode.Comma))
-            {
-                --activeContextIndex;
-                if (activeContextIndex < 0) { activeContextIndex = allContextsList.Count - 1; }
-            }
+            // if (Input.GetKeyDown(KeyCode.Period))
+            // {
+            //     ++activeContextIndex;
+            //     if (activeContextIndex > allContextsList.Count - 1) { activeContextIndex = 0; }
+            // }
+            // else if (Input.GetKeyDown(KeyCode.Comma))
+            // {
+            //     --activeContextIndex;
+            //     if (activeContextIndex < 0) { activeContextIndex = allContextsList.Count - 1; }
+            // }
         } 
     }
 
@@ -101,13 +100,13 @@ public abstract class AIDebugView : MonoBehaviour
 
         Vector3 agentPosition = activeViewContext.owningContext.contextOwner.transform.position;
 
-        Vector3 viewportPoint = activeCamera.WorldToViewportPoint(agentPosition);
+        Vector3 viewportPoint = m_MainCamera.WorldToViewportPoint(agentPosition);
         bool isInViewport = Mathf.Min(viewportPoint.x, viewportPoint.y, viewportPoint.z) > 0;
         
         if (isInViewport)
         {
-            Vector2 screenPos = activeCamera.WorldToScreenPoint(agentPosition);
-            screenPos.y = Screen.height - screenPos.y;
+            Vector2 screenPos = m_MainCamera.WorldToScreenPoint(agentPosition);
+            screenPos.y = 0;
             debugViewRect.Set(screenPos.x, screenPos.y, debugWidth, debugHeight);
             GUI.Label(debugViewRect, GetDebugText(), debugStyle);
         }

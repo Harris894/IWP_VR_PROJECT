@@ -1,5 +1,6 @@
 ﻿public enum AIState
 {
+    WALKING,
     WAITING_FOR_TURN,
     WAITING_FOR_ORDER,
     CHOOSING_MEAL,

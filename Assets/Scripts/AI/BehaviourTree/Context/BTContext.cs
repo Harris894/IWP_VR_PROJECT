@@ -11,6 +11,7 @@ public class BTContext
     public NavMeshAgent navAgent;
 
     public SmartTerrainPoint activeSmartTerrainPoint;
+    public Seat activeSeat;
 
 #if UNITY_EDITOR
     public List<string> behaviourHistory = new List<string>();

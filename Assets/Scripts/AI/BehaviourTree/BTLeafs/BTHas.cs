@@ -35,7 +35,11 @@ public class BTHas : BTNode
             case HasOp.STP:
                 result = context.activeSmartTerrainPoint != null ? BTResult.SUCCESS : BTResult.FAILURE;
                 break;
+            case HasOp.SEAT:
+                result = context.activeSeat != null ? BTResult.SUCCESS : BTResult.FAILURE;
+                break;
         }
+
         return result;
     }
 

@@ -39,6 +39,7 @@ public enum HasOp
     PATH_TO_TARGET,
     TARGET,
     STP,
+    SEAT,
 }
 
 public enum IsOp
@@ -79,5 +80,13 @@ public class BTSmartTerrainPointAttribute : CreateNodeMenuAttribute
     public BTSmartTerrainPointAttribute(Type _type) : base("test")
     {
         menuName = "SmartTerrainPoint/" + _type.ToString();
+    }
+}
+
+public class BTSeatAttribute : CreateNodeMenuAttribute
+{
+    public BTSeatAttribute(Type _type) : base("test")
+    {
+        menuName = "Seat/" + _type.ToString();
     }
 }
