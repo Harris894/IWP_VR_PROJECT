@@ -55,6 +55,7 @@ public static class SeatManager
             Vector3 distance = _seat.transform.position - _agent.GetPosition();
             if (distance.sqrMagnitude <= _seat.maxRange * _seat.maxRange)
             {
+                UnityEngine.Debug.Log(IsOnNavmesh(_seat, out NavMeshHit _hit2));
                 if (IsOnNavmesh(_seat, out NavMeshHit _hit))
                 {
                     _path = new NavMeshPath();
@@ -73,13 +74,9 @@ public static class SeatManager
         _hit = default;
 
         bool isOnNavmesh = true;
-        foreach (Transform _child in _seat.transform) 
+        if (!NavMesh.SamplePosition(_seat.transform.position, out _hit, 10, NavMesh.AllAreas))
         {
-            if (!NavMesh.SamplePosition(_seat.transform.position, out _hit, 10, NavMesh.AllAreas))
-            {
-                isOnNavmesh = false;
-                break;
-            }
+            isOnNavmesh = false;
         }
 
         return isOnNavmesh;

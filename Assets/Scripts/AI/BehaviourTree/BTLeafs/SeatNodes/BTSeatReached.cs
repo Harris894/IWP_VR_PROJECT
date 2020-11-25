@@ -10,7 +10,7 @@ public class BTSeatReached : BTNode
         Seat currentSeat = context.activeSeat;
 
         Vector3 agentPosition = context.contextOwner.transform.position;
-        Vector3 seatPosition = currentSeat.GetNextSeat();
+        Vector3 seatPosition = currentSeat.transform.position;
 
         agentPosition.y = 0;
         seatPosition.y = 0;

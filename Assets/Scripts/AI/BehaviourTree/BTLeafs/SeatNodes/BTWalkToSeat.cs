@@ -22,7 +22,6 @@ public class BTWalkToSeat : BTNode
             {
                 currentSeat.seatTaken = true;
                 currentSeat.OnSeatReached();
-                context.navAgent.SetDestination(currentSeat.GetNextSeat());
             }
         }
         else result = BTResult.FAILURE;
