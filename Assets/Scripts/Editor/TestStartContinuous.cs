@@ -2,7 +2,7 @@
 using UnityEditor;
 
 [CustomEditor(typeof(SpeechRecognition))]
-public class TestSpeech : Editor
+public class TestStartContinuous : Editor
 {
     public override void OnInspectorGUI()
     {

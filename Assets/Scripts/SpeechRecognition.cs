@@ -42,6 +42,7 @@ public class SpeechRecognition : MonoBehaviour
 
     // Used to show live messages on screen, must be locked to avoid threading deadlocks since
     // the recognition events are raised in a separate thread
+    public string lastRecognizedString = "";
     private string recognizedString = "";
     private string errorString = "";
     private System.Object threadLocker = new System.Object();
@@ -229,12 +230,20 @@ public class SpeechRecognition : MonoBehaviour
             lock (threadLocker)
             {
                 recognizedString = $"RESULT: {Environment.NewLine}{e.Result.Text}";
+                UpdateLastRecognizedString(e.Result.Text);
+                //Send string to destination
             }
         }
         else if (e.Result.Reason == ResultReason.NoMatch)
         {
             UnityEngine.Debug.LogFormat($"NOMATCH: Speech could not be recognized.");
+            UpdateLastRecognizedString("Speech could not be recognized.");
         }
+    }
+
+    private void UpdateLastRecognizedString(string message)
+    {
+        lastRecognizedString = message;
     }
 
     // "Canceled" events are fired if the server encounters some kind of error.
