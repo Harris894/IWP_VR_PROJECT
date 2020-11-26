@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public static class SeatManager
 {
     static List<Seat> availableSeatsList = new List<Seat>();
-    static List<Seat> SeatssInUseList = new List<Seat>();
+    static List<Seat> SeatsInUseList = new List<Seat>();
 
     public static void RegisterSeat(Seat _seat) 
     {
@@ -28,10 +28,9 @@ public static class SeatManager
 
         foreach (Seat _seat in availableSeatsList) 
         {
-            if (IsValidSeat(_seat, _agent, out _path)) 
+            if (IsSeatValid(_seat, _agent, out _path)) 
             {
                 validSeat = _seat;
-                validSeat.Reset();
                 break;
             }
         }
@@ -39,18 +38,18 @@ public static class SeatManager
         if (validSeat != null) 
         {
             availableSeatsList.Remove(validSeat);
-            SeatssInUseList.Add(validSeat);
+            SeatsInUseList.Add(validSeat);
         }
 
         return validSeat;
     }
 
-    static bool IsValidSeat(Seat _seat, AIComponent _agent, out NavMeshPath _path) 
+    static bool IsSeatValid(Seat _seat, AIComponent _agent, out NavMeshPath _path) 
     {
         bool isValid = false;
         _path = null;
         
-        if ( !_seat.IsOnCooldown() && _agent.behaviourTreeType == _seat.behaviourTreeType)
+        if (!_seat.IsOnCooldown() && _agent.behaviourTreeType == _seat.behaviourTreeType)
         {
             Vector3 distance = _seat.transform.position - _agent.GetPosition();
             if (distance.sqrMagnitude <= _seat.maxRange * _seat.maxRange)
@@ -89,9 +88,9 @@ public static class SeatManager
 
     public static void OnSeatExit(Seat _seat) 
     {
-        if (SeatssInUseList.Contains(_seat)) 
+        if (SeatsInUseList.Contains(_seat)) 
         {
-            SeatssInUseList.Remove(_seat);
+            SeatsInUseList.Remove(_seat);
             availableSeatsList.Add(_seat);
         }
     }

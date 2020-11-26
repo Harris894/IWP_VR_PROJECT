@@ -15,18 +15,10 @@ public class BTSeatReached : BTNode
         agentPosition.y = 0;
         seatPosition.y = 0;
 
-        if (!currentSeat.endSeatReached && (agentPosition - seatPosition).sqrMagnitude <= 0.1f)
+        if ((agentPosition - seatPosition).sqrMagnitude <= 0.1f)
         {
             currentSeat.OnSeatReached();
-
-            if (currentSeat.endSeatReached && currentSeat.onPathEndTriggerName != "")
-            {
-                context.animatorController.SetTrigger(currentSeat.onPathEndTriggerName);
-            }
-            else if (!currentSeat.IsOnFirstSeat() && currentSeat.onSeatReachedTriggerName != "")
-            {
-                context.animatorController.SetTrigger(currentSeat.onSeatReachedTriggerName);
-            }
+            context.contextOwner.currentState = AIState.WAITING_FOR_TURN;
 
             result = BTResult.SUCCESS;
         }

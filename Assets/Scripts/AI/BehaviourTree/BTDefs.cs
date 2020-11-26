@@ -44,6 +44,7 @@ public enum HasOp
 
 public enum IsOp
 {
+    WALKING,
     WAITING_FOR_TURN,
     WAITING_FOR_ORDER,
     CHOOSING_MEAL,

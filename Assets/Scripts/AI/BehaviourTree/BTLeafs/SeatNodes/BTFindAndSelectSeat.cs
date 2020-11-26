@@ -6,8 +6,10 @@ public class BTFindAndSelectSeat : BTNode
     public override BTResult Execute()
     {
         BTResult result = BTResult.FAILURE;
-        Seat seat = SeatManager.SelectNearestReachableSeat(context.contextOwner, out NavMeshPath _path);
 
+        if (context.activeSeat) return result;
+
+        Seat seat = SeatManager.SelectNearestReachableSeat(context.contextOwner, out NavMeshPath _path);
         if (seat != null)
         {
             context.activeSeat = seat;
