@@ -156,7 +156,7 @@ MonoBehaviour:
   m_Name: BT Walk To Seat
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -1768, y: -8}
+  position: {x: -1768, y: 8}
   ports:
     keys:
     - outResult

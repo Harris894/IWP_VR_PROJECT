@@ -678,74 +678,18 @@ MonoBehaviour:
   targetLocationApproach: {fileID: 1132209837}
   targetLocationLeave: {x: 0, y: 0, z: 0}
   playerPos: {fileID: 1862551299}
---- !u!1 &730298211
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 730298213}
-  - component: {fileID: 730298212}
-  - component: {fileID: 730298214}
-  m_Layer: 0
-  m_Name: SpeechManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &730298212
+--- !u!114 &730298212 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 6407864626973793728, guid: 414b1cfc37d57774d880fca62de54e82,
+    type: 3}
+  m_PrefabInstance: {fileID: 6407864627318172324}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 730298211}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 480960272efb4f447a3665b7b56e5614, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RecognizedText: {fileID: 1781994653}
-  lastRecognizedString: 
-  SpeechServiceAPIKey: a9b197d89cca4fd69871ea117a5244ec
-  SpeechServiceRegion: westeurope
---- !u!4 &730298213
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 730298211}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.65331835, y: 9.081651, z: -4.242302}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &730298214
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 730298211}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 537ab4468ab95e346bb811ebc85559b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lastMessage: 
-  greetingKeywords:
-  - hi
-  - how
-  - can
-  - help
-  - you
-  activeNPCs: []
 --- !u!1 &1098688423
 GameObject:
   m_ObjectHideFlags: 0
@@ -2434,6 +2378,80 @@ PrefabInstance:
       objectReference: {fileID: 1860377670}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88f975238f01c184d8b57560d8c8a607, type: 3}
+--- !u!1001 &6407864627318172324
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6407864626973793728, guid: 414b1cfc37d57774d880fca62de54e82,
+        type: 3}
+      propertyPath: RecognizedText
+      value: 
+      objectReference: {fileID: 1781994653}
+    - target: {fileID: 6407864626973793729, guid: 414b1cfc37d57774d880fca62de54e82,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.65331835
+      objectReference: {fileID: 0}
+    - target: {fileID: 6407864626973793729, guid: 414b1cfc37d57774d880fca62de54e82,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.081651
+      objectReference: {fileID: 0}
+    - target: {fileID: 6407864626973793729, guid: 414b1cfc37d57774d880fca62de54e82,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.242302
+      objectReference: {fileID: 0}
+    - target: {fileID: 6407864626973793729, guid: 414b1cfc37d57774d880fca62de54e82,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6407864626973793729, guid: 414b1cfc37d57774d880fca62de54e82,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6407864626973793729, guid: 414b1cfc37d57774d880fca62de54e82,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6407864626973793729, guid: 414b1cfc37d57774d880fca62de54e82,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6407864626973793729, guid: 414b1cfc37d57774d880fca62de54e82,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6407864626973793729, guid: 414b1cfc37d57774d880fca62de54e82,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6407864626973793729, guid: 414b1cfc37d57774d880fca62de54e82,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6407864626973793729, guid: 414b1cfc37d57774d880fca62de54e82,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6407864626973793735, guid: 414b1cfc37d57774d880fca62de54e82,
+        type: 3}
+      propertyPath: m_Name
+      value: SpeechManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 414b1cfc37d57774d880fca62de54e82, type: 3}
 --- !u!1001 &9013364419312698904
 PrefabInstance:
   m_ObjectHideFlags: 0

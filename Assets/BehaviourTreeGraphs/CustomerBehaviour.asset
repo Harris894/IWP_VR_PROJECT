@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BT Selector
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -792, y: -8}
+  position: {x: -600, y: 200}
   ports:
     keys:
     - inResults
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Name: BT Is
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -1336, y: -216}
+  position: {x: -1352, y: -136}
   ports:
     keys:
     - outResult
@@ -187,7 +187,7 @@ MonoBehaviour:
   m_Name: BT Sequence
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -1064, y: 504}
+  position: {x: -1000, y: 456}
   ports:
     keys:
     - inResults
@@ -271,7 +271,7 @@ MonoBehaviour:
   m_Name: BT Root
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -520, y: -8}
+  position: {x: -184, y: 184}
   ports:
     keys:
     - inResult
@@ -406,7 +406,7 @@ MonoBehaviour:
   m_Name: BT Sub Tree
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -1336, y: -8}
+  position: {x: -1352, y: 8}
   ports:
     keys:
     - outResult
@@ -472,7 +472,7 @@ MonoBehaviour:
   m_Name: BT Find And Select Seat
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -1064, y: 296}
+  position: {x: -1016, y: 280}
   ports:
     keys:
     - outResult
@@ -504,7 +504,7 @@ MonoBehaviour:
   m_Name: BT Sequence
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -1064, y: 88}
+  position: {x: -1064, y: 104}
   ports:
     keys:
     - inResults
