@@ -18,10 +18,7 @@ public class UIManager : MonoBehaviour
     private bool primaryButtonIsPressed;
     private bool secondaryButtonIsPressed;
 
-    public GameObject cube;
 
-    public UnityEvent upEvent;
-    public UnityEvent downEvent;
 
     void GetDevice()
     {
@@ -80,12 +77,10 @@ public class UIManager : MonoBehaviour
         {
             Debug.Log("StartListeningFromUIManager");
             secondaryButtonIsPressed = true;
-            downEvent?.Invoke();
         }
         else if (!secondaryButtonValue && secondaryButtonIsPressed)
         {
             secondaryButtonIsPressed = false;
-            upEvent?.Invoke();
         }
 
 
