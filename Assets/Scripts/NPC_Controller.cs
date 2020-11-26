@@ -29,6 +29,7 @@ public class NPC_Controller : MonoBehaviour
     /// </summary>
     private void Update()
     {
+        // TODO: This should go to animator states.
         if (walk)
         {
             if (agent.remainingDistance < 0.1)
