@@ -17,6 +17,18 @@ public class Seat : MonoBehaviour
     internal bool shouldUpdateCooldown = true;
     float cooldownTimer = 0;
 
+    public SeatRuntimeSet RuntimeSet;
+
+    private void OnEnable()
+    {
+        RuntimeSet.Add(this);
+    }
+
+    private void OnDisable()
+    {
+        RuntimeSet.Remove(this);
+    }
+
     private void Awake()
     {
         SeatManager.RegisterSeat(this);
