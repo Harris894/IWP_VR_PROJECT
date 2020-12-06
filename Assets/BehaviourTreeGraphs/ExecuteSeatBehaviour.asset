@@ -26,6 +26,21 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: outResult
+        node: {fileID: 751106077023168180}
+        reroutePoints: []
+      - fieldName: outResult
+        node: {fileID: 6755245053327815618}
+        reroutePoints: []
+      - fieldName: outResult
+        node: {fileID: -1863811452792681924}
+        reroutePoints: []
+      - fieldName: outResult
+        node: {fileID: 4600359445145814311}
+        reroutePoints: []
+      - fieldName: outResult
+        node: {fileID: -4712709148222580834}
+        reroutePoints: []
+      - fieldName: outResult
         node: {fileID: 2624208601437481934}
         reroutePoints: []
       - fieldName: outResult
@@ -50,6 +65,72 @@ MonoBehaviour:
   outResult: 0
   nodeDescription: 
   inResults: 
+--- !u!114 &-4712709148222580834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87f75d9fd04f15a48b09e4305dc0ecc9, type: 3}
+  m_Name: BT Has
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -1768, y: -24}
+  ports:
+    keys:
+    - outResult
+    values:
+    - _fieldName: outResult
+      _node: {fileID: -4712709148222580834}
+      _typeQualifiedName: BTResult, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: inResults
+        node: {fileID: -6243349464175724952}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  outResult: 0
+  nodeDescription: 
+  operation: 0
+  destinationTolerance: 1
+--- !u!114 &-1863811452792681924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1637ce769d56afc409ce7287b8e4ad63, type: 3}
+  m_Name: BT Find And Select Seat
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -1768, y: -264}
+  ports:
+    keys:
+    - outResult
+    values:
+    - _fieldName: outResult
+      _node: {fileID: -1863811452792681924}
+      _typeQualifiedName: BTResult, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: inResults
+        node: {fileID: -6243349464175724952}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  outResult: 0
+  nodeDescription: 
 --- !u!114 &-242452059001293338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,6 +191,93 @@ MonoBehaviour:
   - {fileID: -6243349464175724952}
   - {fileID: 2624208601437481934}
   - {fileID: 6483067510901640669}
+  - {fileID: 359220928377434697}
+  - {fileID: 6755245053327815618}
+  - {fileID: 751106077023168180}
+  - {fileID: 8560686631038454660}
+  - {fileID: -1863811452792681924}
+  - {fileID: 4600359445145814311}
+  - {fileID: -4712709148222580834}
+--- !u!114 &359220928377434697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87f75d9fd04f15a48b09e4305dc0ecc9, type: 3}
+  m_Name: BT Has
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -2024, y: -408}
+  ports:
+    keys:
+    - outResult
+    values:
+    - _fieldName: outResult
+      _node: {fileID: 359220928377434697}
+      _typeQualifiedName: BTResult, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: inResult
+        node: {fileID: 6755245053327815618}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  outResult: 0
+  nodeDescription: 
+  operation: 4
+  destinationTolerance: 1
+--- !u!114 &751106077023168180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 961a67d4fa4d8d342b7cae6622711701, type: 3}
+  m_Name: BT Invert
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -1768, y: -536}
+  ports:
+    keys:
+    - inResult
+    - outResult
+    values:
+    - _fieldName: inResult
+      _node: {fileID: 751106077023168180}
+      _typeQualifiedName: BTResult, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: outResult
+        node: {fileID: 8560686631038454660}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: outResult
+      _node: {fileID: 751106077023168180}
+      _typeQualifiedName: BTResult, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: inResults
+        node: {fileID: -6243349464175724952}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  outResult: 0
+  nodeDescription: 
+  inResult: 0
 --- !u!114 &2624208601437481934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,7 +291,7 @@ MonoBehaviour:
   m_Name: BT Set Agent Speed
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -1768, y: -200}
+  position: {x: -1768, y: 136}
   ports:
     keys:
     - outResult
@@ -142,7 +310,40 @@ MonoBehaviour:
       _dynamic: 0
   outResult: 0
   nodeDescription: 
-  desiredSpeed: 1
+  desiredSpeed: 2
+--- !u!114 &4600359445145814311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21ae1bb1dc128de4896590efcf4523a5, type: 3}
+  m_Name: BT Is
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -1768, y: -152}
+  ports:
+    keys:
+    - outResult
+    values:
+    - _fieldName: outResult
+      _node: {fileID: 4600359445145814311}
+      _typeQualifiedName: BTResult, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: inResults
+        node: {fileID: -6243349464175724952}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  outResult: 0
+  nodeDescription: 
+  isOperation: 0
 --- !u!114 &6483067510901640669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,7 +357,7 @@ MonoBehaviour:
   m_Name: BT Walk To Seat
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -1768, y: -8}
+  position: {x: -1768, y: 264}
   ports:
     keys:
     - outResult
@@ -175,3 +376,82 @@ MonoBehaviour:
       _dynamic: 0
   outResult: 0
   nodeDescription: 
+--- !u!114 &6755245053327815618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 961a67d4fa4d8d342b7cae6622711701, type: 3}
+  m_Name: BT Invert
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -1768, y: -408}
+  ports:
+    keys:
+    - inResult
+    - outResult
+    values:
+    - _fieldName: inResult
+      _node: {fileID: 6755245053327815618}
+      _typeQualifiedName: BTResult, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: outResult
+        node: {fileID: 359220928377434697}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: outResult
+      _node: {fileID: 6755245053327815618}
+      _typeQualifiedName: BTResult, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: inResults
+        node: {fileID: -6243349464175724952}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  outResult: 0
+  nodeDescription: 
+  inResult: 0
+--- !u!114 &8560686631038454660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21ae1bb1dc128de4896590efcf4523a5, type: 3}
+  m_Name: BT Is
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -2024, y: -536}
+  ports:
+    keys:
+    - outResult
+    values:
+    - _fieldName: outResult
+      _node: {fileID: 8560686631038454660}
+      _typeQualifiedName: BTResult, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: inResult
+        node: {fileID: 751106077023168180}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  outResult: 0
+  nodeDescription: 
+  isOperation: 8

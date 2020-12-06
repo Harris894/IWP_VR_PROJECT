@@ -44,6 +44,11 @@ public static class SeatManager
         return validSeat;
     }
 
+    public static IDestination GetSeatDestination(Seat _seat)
+    {
+        return (IDestination) _seat;
+    }
+
     static bool IsSeatValid(Seat _seat, AIComponent _agent, out NavMeshPath _path) 
     {
         bool isValid = false;

@@ -6,7 +6,7 @@ using UnityEngine;
 /// <summary>
 /// The Seat class is 
 /// </summary>
-public class Seat : MonoBehaviour
+public class Seat : MonoBehaviour, IDestination
 {
     [Header("Settings")]
     public int maxRange = 10;
@@ -63,5 +63,11 @@ public class Seat : MonoBehaviour
     public Vector3 GetPosition()
     {
         return transform.position;
+    }
+
+    public void OnDestinationReached()
+    {
+        UnityEngine.Debug.Log(seatTaken);
+        OnSeatReached();
     }
 }

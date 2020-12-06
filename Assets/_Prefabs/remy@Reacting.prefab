@@ -2229,10 +2229,13 @@ GameObject:
   - component: {fileID: 7505221190560564012}
   - component: {fileID: 8047193205019520085}
   - component: {fileID: 8047193205019520082}
-  - component: {fileID: 8047193205019520084}
+  - component: {fileID: 1132953382504013905}
   - component: {fileID: 8047193205019520087}
   - component: {fileID: 20222599120655183}
   - component: {fileID: 2238864267942934015}
+  - component: {fileID: 5339542509965322137}
+  - component: {fileID: 2105296516938585316}
+  - component: {fileID: 5887625100807398175}
   m_Layer: 0
   m_Name: remy@Reacting
   m_TagString: Untagged
@@ -2303,7 +2306,7 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &8047193205019520084
+--- !u!114 &1132953382504013905
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2317,7 +2320,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetLocationApproach: {fileID: 0}
   targetLocationLeave: {x: 0, y: 0, z: 0}
-  playerPos: {fileID: 0}
+  playerPos: {fileID: 7505221190560564012}
 --- !u!114 &8047193205019520087
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2344,12 +2347,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7164160773104114070}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fd252afa6a13a144493207e0bdf14bfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  showDebug: 0
+  showDebug: 1
   m_MainCamera: {fileID: 0}
 --- !u!114 &2238864267942934015
 MonoBehaviour:
@@ -2364,6 +2367,87 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RuntimeSet: {fileID: 11400000, guid: e55afbb78e61bde478677ee37bd223c0, type: 2}
+--- !u!114 &5339542509965322137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7164160773104114070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9abdd771fb76ab546a6c6e6426d3173f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 61f4c3e6c5c72e548a66009600aa0fbd, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8047193205019520087}
+        m_MethodName: ListenToPlayer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2105296516938585316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7164160773104114070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9abdd771fb76ab546a6c6e6426d3173f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 47a4d36cad84ed84db6e10878c7190ca, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8047193205019520087}
+        m_MethodName: RespondToPlayer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5887625100807398175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7164160773104114070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9abdd771fb76ab546a6c6e6426d3173f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: ed05267d28b95b345bba673c42065120, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8047193205019520087}
+        m_MethodName: CustomerLeaves
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7457033748000719023
 GameObject:
   m_ObjectHideFlags: 0
