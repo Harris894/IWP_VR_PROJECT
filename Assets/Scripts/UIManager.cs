@@ -4,84 +4,83 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.XR;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
 public class UIManager : MonoBehaviour
 {
     public GameObject uiPanel;
 
     [SerializeField]
-    private XRNode xRNode = XRNode.LeftHand;
-    private List<InputDevice> devices = new List<InputDevice>();
+    private InputActionAsset actionAsset;
+    [SerializeField] private string controllerName;
+    [SerializeField] private string actionNameButtonY;
 
-    private InputDevice device;
-
-    private bool primaryButtonIsPressed;
-    private bool secondaryButtonIsPressed;
-
+    private InputActionMap _actionMap;
+    private InputAction _inputActionButtonY;
 
 
-    void GetDevice()
+    private void Awake()
     {
-        InputDevices.GetDevicesAtXRNode(xRNode, devices);
-        device = devices.FirstOrDefault();
+        _actionMap = actionAsset.FindActionMap(controllerName);
+        _inputActionButtonY = _actionMap.FindAction(actionNameButtonY);
+        
     }
 
     void OnEnable()
     {
-        if (!device.isValid)
-        {
-            Debug.Log("Not detected");
-            GetDevice();
-        }
+        _inputActionButtonY.Enable();
+    }
+    private void OnDisable()
+    {
+        _inputActionButtonY.Disable();
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        // capturing primary button press and release
-        bool primaryButtonValue = false;
-        bool secondaryButtonValue = false;
-
-        InputFeatureUsage<bool> primaryButtonUsage = CommonUsages.primaryButton;
-        InputFeatureUsage<bool> secondaryButtonUsage = CommonUsages.secondaryButton;
-
-
-        //Making sure the devices are registered.
-        if (!device.isValid)
+        if (_inputActionButtonY.triggered)
         {
-            GetDevice();
-        }
-
-
-        if (device.TryGetFeatureValue(primaryButtonUsage, out primaryButtonValue) && primaryButtonValue && !primaryButtonIsPressed)
-        {
-            //If pressed, turn ui panel on or off
-            primaryButtonIsPressed = true;
-            if (uiPanel.activeInHierarchy)
-            {
-                uiPanel.SetActive(false);
-            }
-            else
+            Debug.Log("Y button Pressed");
+            if (!uiPanel.activeSelf)
             {
                 uiPanel.SetActive(true);
             }
-        }
-        else if (!primaryButtonValue && primaryButtonIsPressed)
-        {
-            primaryButtonIsPressed = false;
-            Debug.Log("Primary released");
+            else
+            {
+                uiPanel.SetActive(false);
+            }
         }
 
-        if (device.TryGetFeatureValue(secondaryButtonUsage, out secondaryButtonValue) && secondaryButtonValue && !secondaryButtonIsPressed)
-        {
-            Debug.Log("StartListeningFromUIManager");
-            secondaryButtonIsPressed = true;
-        }
-        else if (!secondaryButtonValue && secondaryButtonIsPressed)
-        {
-            secondaryButtonIsPressed = false;
-        }
+
+        //if (device.TryGetFeatureValue(primaryButtonUsage, out primaryButtonValue) && primaryButtonValue && !primaryButtonIsPressed)
+        //{
+        //    //If pressed, turn ui panel on or off
+        //    primaryButtonIsPressed = true;
+        //    if (uiPanel.activeInHierarchy)
+        //    {
+        //        uiPanel.SetActive(false);
+        //    }
+        //    else
+        //    {
+        //        uiPanel.SetActive(true);
+        //    }
+        //}
+        //else if (!primaryButtonValue && primaryButtonIsPressed)
+        //{
+        //    primaryButtonIsPressed = false;
+        //    Debug.Log("Primary released");
+        //}
+
+        //if (device.TryGetFeatureValue(secondaryButtonUsage, out secondaryButtonValue) && secondaryButtonValue && !secondaryButtonIsPressed)
+        //{
+        //    Debug.Log("StartListeningFromUIManager");
+        //    secondaryButtonIsPressed = true;
+        //}
+        //else if (!secondaryButtonValue && secondaryButtonIsPressed)
+        //{
+        //    secondaryButtonIsPressed = false;
+        //}
 
 
 
