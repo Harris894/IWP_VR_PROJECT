@@ -14,6 +14,9 @@ public class BTFindAndSelectSeat : BTNode
         {
             context.activeSeat = seat;
             context.navAgent.SetPath(_path);
+            context.contextOwner.currentState = AIState.ENTERING;
+            context.contextOwner.currentTarget = seat;
+            context.contextOwner.currentTarget = SeatManager.GetSeatDestination(seat);
             
             result = BTResult.SUCCESS;
         }

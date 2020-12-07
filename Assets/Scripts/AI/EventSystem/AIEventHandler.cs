@@ -1,4 +1,5 @@
-﻿using System;
+﻿using System.Diagnostics;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -42,11 +43,27 @@ public class AIEventHandler
 
         foreach (TargetHitInfo _hitInfo in unprocessedHitInfoList)
         {
-            aiComponent.currentTarget = _hitInfo.hitSource;
+            aiComponent.currentTarget = (IDestination) _hitInfo.hitSource;
             eventSystem.PropagateEvents(aiComponent, _hitInfo.hitSource, StimType.HURT, StimType.THREATENING_SOUND);
         }
 
         unprocessedHitInfoList.Clear();
+    }
+
+    public void ListenToPlayer()
+    {
+        aiComponent.currentState = AIState.REACTING;
+        UnityEngine.Debug.Log(aiComponent.currentState);
+    }
+
+    public void RespondToPlayer()
+    {
+        aiComponent.currentState = AIState.REACTING;
+    }
+
+    public void CustomerLeaves()
+    {
+        aiComponent.currentState = AIState.LEAVING;
     }
 
     public void OnTargetHit(TargetHitInfo _hitInfo)
@@ -68,7 +85,7 @@ public class AIEventHandler
                     if (aiComponent.currentState != AIState.REACTING)
                     {
                         aiComponent.currentState = AIState.REACTING;
-                        aiComponent.currentTarget = _event.eventInstigator;
+                        aiComponent.currentTarget = (IDestination) _event.eventInstigator;
                         navAgent.ResetPath();
                     }
                     break;

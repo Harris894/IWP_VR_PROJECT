@@ -4,7 +4,7 @@ public class BTSetMoveState : BTNode
     public MovementState desiredMoveState;
     public override BTResult Execute()
     {
-        context.animatorController.SetInteger(BTDefs.MOVEMENT_STATE, (int)desiredMoveState);
+        context.animatorController.SetBool("walk", true);
         return BTResult.SUCCESS;
     }
 }

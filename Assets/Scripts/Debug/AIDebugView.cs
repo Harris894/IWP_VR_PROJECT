@@ -23,7 +23,7 @@ public abstract class AIDebugView : MonoBehaviour
     private void Start()
     {
         behaviourTreeManager = BehaviourTreeManager.GetInstance();
-        debugStyle.fontSize = 18;
+        debugStyle.fontSize = 14;
         debugStyle.normal.textColor = Color.green;
     }
 

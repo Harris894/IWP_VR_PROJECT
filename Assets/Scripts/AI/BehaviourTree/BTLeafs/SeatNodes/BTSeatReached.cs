@@ -15,6 +15,7 @@ public class BTSeatReached : BTNode
         agentPosition.y = 0;
         seatPosition.y = 0;
 
+UnityEngine.Debug.Log((agentPosition - seatPosition).sqrMagnitude);
         if ((agentPosition - seatPosition).sqrMagnitude <= 0.1f)
         {
             currentSeat.OnSeatReached();

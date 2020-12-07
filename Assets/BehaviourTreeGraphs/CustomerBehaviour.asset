@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BT Selector
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -600, y: 200}
+  position: {x: -792, y: -8}
   ports:
     keys:
     - inResults
@@ -26,13 +26,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: outResult
-        node: {fileID: -6515511229575726462}
-        reroutePoints: []
-      - fieldName: outResult
-        node: {fileID: 4489974221395224608}
-        reroutePoints: []
-      - fieldName: outResult
-        node: {fileID: 1314372934395290531}
+        node: {fileID: -2330739278077565267}
         reroutePoints: []
       - fieldName: outResult
         node: {fileID: -3001575988116047952}
@@ -56,57 +50,7 @@ MonoBehaviour:
   outResult: 0
   nodeDescription: 
   inResults: 
---- !u!114 &-6515511229575726462
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d5a89d32b21ede49ada8f12efd4d8cf, type: 3}
-  m_Name: BT Sequence
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: -1064, y: -104}
-  ports:
-    keys:
-    - inResults
-    - outResult
-    values:
-    - _fieldName: inResults
-      _node: {fileID: -6515511229575726462}
-      _typeQualifiedName: System.Collections.Generic.List`1[[BTResult, Assembly-CSharp,
-        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
-        Culture=neutral, PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: outResult
-        node: {fileID: -3886879589741906951}
-        reroutePoints: []
-      - fieldName: outResult
-        node: {fileID: 385767620852728052}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-    - _fieldName: outResult
-      _node: {fileID: -6515511229575726462}
-      _typeQualifiedName: BTResult, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-      connections:
-      - fieldName: inResults
-        node: {fileID: -8987903917399831874}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-  outResult: 0
-  nodeDescription: 
-  inResults: 
---- !u!114 &-3886879589741906951
+--- !u!114 &-5218593150285429471
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -119,18 +63,18 @@ MonoBehaviour:
   m_Name: BT Is
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -1352, y: -136}
+  position: {x: -1560, y: -264}
   ports:
     keys:
     - outResult
     values:
     - _fieldName: outResult
-      _node: {fileID: -3886879589741906951}
+      _node: {fileID: -5218593150285429471}
       _typeQualifiedName: BTResult, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
       connections:
       - fieldName: inResults
-        node: {fileID: -6515511229575726462}
+        node: {fileID: -1366949543411516989}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -138,7 +82,7 @@ MonoBehaviour:
       _dynamic: 0
   outResult: 0
   nodeDescription: 
-  isOperation: 6
+  isOperation: 1
 --- !u!114 &-3607019978933228300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,7 +131,7 @@ MonoBehaviour:
   m_Name: BT Sequence
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -1000, y: 456}
+  position: {x: -1064, y: 216}
   ports:
     keys:
     - inResults
@@ -224,7 +168,7 @@ MonoBehaviour:
   outResult: 0
   nodeDescription: 
   inResults: 
---- !u!114 &-2497425124940037987
+--- !u!114 &-2330739278077565267
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -233,22 +177,39 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87f75d9fd04f15a48b09e4305dc0ecc9, type: 3}
-  m_Name: BT Has
+  m_Script: {fileID: 11500000, guid: 0d5a89d32b21ede49ada8f12efd4d8cf, type: 3}
+  m_Name: BT Sequence
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -1336, y: 296}
+  position: {x: -1048, y: -136}
   ports:
     keys:
+    - inResults
     - outResult
     values:
+    - _fieldName: inResults
+      _node: {fileID: -2330739278077565267}
+      _typeQualifiedName: System.Collections.Generic.List`1[[BTResult, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: outResult
+        node: {fileID: -1366949543411516989}
+        reroutePoints: []
+      - fieldName: outResult
+        node: {fileID: -130162546243144672}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
     - _fieldName: outResult
-      _node: {fileID: -2497425124940037987}
+      _node: {fileID: -2330739278077565267}
       _typeQualifiedName: BTResult, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
       connections:
       - fieldName: inResults
-        node: {fileID: 4489974221395224608}
+        node: {fileID: -8987903917399831874}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -256,8 +217,7 @@ MonoBehaviour:
       _dynamic: 0
   outResult: 0
   nodeDescription: 
-  operation: 0
-  destinationTolerance: 1
+  inResults: 
 --- !u!114 &-1553540565874273880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -271,7 +231,7 @@ MonoBehaviour:
   m_Name: BT Root
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -184, y: 184}
+  position: {x: -520, y: -8}
   ports:
     keys:
     - inResult
@@ -301,6 +261,56 @@ MonoBehaviour:
   outResult: 0
   nodeDescription: 
   inResult: 0
+--- !u!114 &-1366949543411516989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34697c597a419734f8449d1f866d19d0, type: 3}
+  m_Name: BT Selector
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -1320, y: -216}
+  ports:
+    keys:
+    - inResults
+    - outResult
+    values:
+    - _fieldName: inResults
+      _node: {fileID: -1366949543411516989}
+      _typeQualifiedName: System.Collections.Generic.List`1[[BTResult, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
+        Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: outResult
+        node: {fileID: -5218593150285429471}
+        reroutePoints: []
+      - fieldName: outResult
+        node: {fileID: 3626167161798173176}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: outResult
+      _node: {fileID: -1366949543411516989}
+      _typeQualifiedName: BTResult, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+      connections:
+      - fieldName: inResults
+        node: {fileID: -2330739278077565267}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  outResult: 0
+  nodeDescription: 
+  inResults: 
 --- !u!114 &-130162546243144672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -314,7 +324,7 @@ MonoBehaviour:
   m_Name: BT Sub Tree
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -1336, y: 456}
+  position: {x: -1560, y: -8}
   ports:
     keys:
     - outResult
@@ -325,7 +335,7 @@ MonoBehaviour:
         PublicKeyToken=null
       connections:
       - fieldName: inResults
-        node: {fileID: 4489974221395224608}
+        node: {fileID: -2330739278077565267}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -333,7 +343,7 @@ MonoBehaviour:
       _dynamic: 0
   outResult: 0
   nodeDescription: 
-  subTree: {fileID: 11400000, guid: 2b62042e5d94f614ca75cf75ad3603dc, type: 2}
+  subTree: {fileID: 11400000, guid: aec112343b08a4443ad1e5e3f38b9d6d, type: 2}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -349,17 +359,14 @@ MonoBehaviour:
   nodes:
   - {fileID: -1553540565874273880}
   - {fileID: -8987903917399831874}
-  - {fileID: -6515511229575726462}
-  - {fileID: -3886879589741906951}
-  - {fileID: 385767620852728052}
-  - {fileID: 4489974221395224608}
-  - {fileID: 1314372934395290531}
   - {fileID: -3001575988116047952}
   - {fileID: 5340576464239557292}
   - {fileID: 167172714171961979}
-  - {fileID: 1162844216726034641}
-  - {fileID: -2497425124940037987}
   - {fileID: -130162546243144672}
+  - {fileID: -1366949543411516989}
+  - {fileID: -2330739278077565267}
+  - {fileID: -5218593150285429471}
+  - {fileID: 3626167161798173176}
 --- !u!114 &167172714171961979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -373,7 +380,7 @@ MonoBehaviour:
   m_Name: BT Set Agent Speed
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -1336, y: 776}
+  position: {x: -1336, y: 344}
   ports:
     keys:
     - outResult
@@ -393,40 +400,7 @@ MonoBehaviour:
   outResult: 0
   nodeDescription: 
   desiredSpeed: 0
---- !u!114 &385767620852728052
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f6bb43706aa5f7469c35b4436489de7, type: 3}
-  m_Name: BT Sub Tree
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: -1352, y: 8}
-  ports:
-    keys:
-    - outResult
-    values:
-    - _fieldName: outResult
-      _node: {fileID: 385767620852728052}
-      _typeQualifiedName: BTResult, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-      connections:
-      - fieldName: inResults
-        node: {fileID: -6515511229575726462}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-  outResult: 0
-  nodeDescription: Customer Leaves
-  subTree: {fileID: 11400000, guid: 450b5af5b62566942a02ef3dc8349552, type: 2}
---- !u!114 &1162844216726034641
+--- !u!114 &3626167161798173176
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -439,18 +413,18 @@ MonoBehaviour:
   m_Name: BT Is
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -1336, y: 168}
+  position: {x: -1560, y: -136}
   ports:
     keys:
     - outResult
     values:
     - _fieldName: outResult
-      _node: {fileID: 1162844216726034641}
+      _node: {fileID: 3626167161798173176}
       _typeQualifiedName: BTResult, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
       connections:
       - fieldName: inResults
-        node: {fileID: 4489974221395224608}
+        node: {fileID: -1366949543411516989}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -458,92 +432,7 @@ MonoBehaviour:
       _dynamic: 0
   outResult: 0
   nodeDescription: 
-  isOperation: 0
---- !u!114 &1314372934395290531
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1637ce769d56afc409ce7287b8e4ad63, type: 3}
-  m_Name: BT Find And Select Seat
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: -1016, y: 280}
-  ports:
-    keys:
-    - outResult
-    values:
-    - _fieldName: outResult
-      _node: {fileID: 1314372934395290531}
-      _typeQualifiedName: BTResult, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-      connections:
-      - fieldName: inResults
-        node: {fileID: -8987903917399831874}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-  outResult: 0
-  nodeDescription: 
---- !u!114 &4489974221395224608
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d5a89d32b21ede49ada8f12efd4d8cf, type: 3}
-  m_Name: BT Sequence
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: -1064, y: 104}
-  ports:
-    keys:
-    - inResults
-    - outResult
-    values:
-    - _fieldName: inResults
-      _node: {fileID: 4489974221395224608}
-      _typeQualifiedName: System.Collections.Generic.List`1[[BTResult, Assembly-CSharp,
-        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0,
-        Culture=neutral, PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: outResult
-        node: {fileID: 1162844216726034641}
-        reroutePoints: []
-      - fieldName: outResult
-        node: {fileID: -2497425124940037987}
-        reroutePoints: []
-      - fieldName: outResult
-        node: {fileID: -130162546243144672}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-    - _fieldName: outResult
-      _node: {fileID: 4489974221395224608}
-      _typeQualifiedName: BTResult, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-      connections:
-      - fieldName: inResults
-        node: {fileID: -8987903917399831874}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-  outResult: 0
-  nodeDescription: 
-  inResults: 
+  isOperation: 9
 --- !u!114 &5340576464239557292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -557,7 +446,7 @@ MonoBehaviour:
   m_Name: BT Is
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -1336, y: 600}
+  position: {x: -1336, y: 216}
   ports:
     keys:
     - outResult
@@ -576,4 +465,4 @@ MonoBehaviour:
       _dynamic: 0
   outResult: 0
   nodeDescription: 
-  isOperation: 1
+  isOperation: 2

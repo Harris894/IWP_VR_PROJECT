@@ -45,10 +45,12 @@ public enum HasOp
 public enum IsOp
 {
     WALKING,
+    ENTERING,
     WAITING_FOR_TURN,
     WAITING_FOR_ORDER,
     CHOOSING_MEAL,
     ORDERING,
+    LISTENING,
     REACTING,
     CONSUMING,
     LEAVING
@@ -81,6 +83,22 @@ public class BTSmartTerrainPointAttribute : CreateNodeMenuAttribute
     public BTSmartTerrainPointAttribute(Type _type) : base("test")
     {
         menuName = "SmartTerrainPoint/" + _type.ToString();
+    }
+}
+
+public class BTDestinationAttribute : CreateNodeMenuAttribute
+{
+    public BTDestinationAttribute(Type _type) : base("test")
+    {
+        menuName = "Destination/" + _type.ToString();
+    }
+}
+
+public class BTEntranceAttribute : CreateNodeMenuAttribute
+{
+    public BTEntranceAttribute(Type _type) : base("test")
+    {
+        menuName = "Entrance/" + _type.ToString();
     }
 }
 

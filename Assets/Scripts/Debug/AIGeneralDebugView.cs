@@ -11,7 +11,7 @@ public class AIGeneralDebugView : AIDebugView
         viewText += "Tree Type: " + owningAgent.behaviourTreeType.ToString() + "\n";
         viewText += "AI State: " + owningAgent.currentState.ToString() + "\n";
 
-        IEventSource currentTarget = owningAgent.currentTarget;
+        IEventSource currentTarget = (IEventSource) owningAgent.currentTarget;
 
         if (currentTarget != null)
         {
@@ -35,6 +35,7 @@ public class AIGeneralDebugView : AIDebugView
                 debugStyle.normal.textColor = Color.yellow;
                 break;
             case AIState.REACTING:
+            case AIState.ENTERING:
             case AIState.LEAVING:
                 debugStyle.normal.textColor = Color.red;
                 break;

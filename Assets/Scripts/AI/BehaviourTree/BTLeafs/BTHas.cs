@@ -39,7 +39,7 @@ public class BTHas : BTNode
                 result = context.activeSeat != null ? BTResult.SUCCESS : BTResult.FAILURE;
                 break;
         }
-
+UnityEngine.Debug.Log(result);
         return result;
     }
 
