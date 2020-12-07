@@ -1,3 +1,4 @@
+using System;
 [BTSeat(typeof(BTExitSeat))]
 public class BTExitSeat : BTNode
 {
@@ -7,7 +8,9 @@ public class BTExitSeat : BTNode
 
         context.activeSeat.OnExit();
         context.activeSeat = null;
+        
         context.navAgent.ResetPath();
+        context.contextOwner.currentState = AIState.LEAVING;
 
         return BTResult.SUCCESS;
     }

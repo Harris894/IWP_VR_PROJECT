@@ -1,16 +1,17 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(NavMeshAgent))]
-public class AIComponent : MonoBehaviour, IWeaponTarget, IEventSource
+public class AIComponent : MonoBehaviour, IWeaponTarget, IEventSource   
 {
     public BehaviourTreeType behaviourTreeType;
     public SensorySystem sensorySystem;
     public AIEventHandler eventHandler;
 
-    internal AIState currentState = AIState.IDLE;
-    internal IEventSource currentTarget;
+    internal AIState currentState = AIState.ENTERING;
+    internal IDestination currentTarget = null;
 
     Animator animatorController;
     NavMeshAgent navAgent;
@@ -34,6 +35,21 @@ public class AIComponent : MonoBehaviour, IWeaponTarget, IEventSource
     public void OnTargetHit(TargetHitInfo _hitInfo)
     {
         eventHandler.OnTargetHit(_hitInfo);
+    }
+
+    public void ListenToPlayer()
+    {
+        eventHandler.ListenToPlayer();
+    }
+
+    public void RespondToPlayer()
+    {
+        eventHandler.RespondToPlayer();
+    }
+
+    public void CustomerLeaves()
+    {
+        eventHandler.CustomerLeaves();
     }
 
     void Update()

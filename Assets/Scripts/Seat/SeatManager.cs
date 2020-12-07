@@ -44,6 +44,11 @@ public static class SeatManager
         return validSeat;
     }
 
+    public static IDestination GetSeatDestination(Seat _seat)
+    {
+        return (IDestination) _seat;
+    }
+
     static bool IsSeatValid(Seat _seat, AIComponent _agent, out NavMeshPath _path) 
     {
         bool isValid = false;
@@ -54,7 +59,6 @@ public static class SeatManager
             Vector3 distance = _seat.transform.position - _agent.GetPosition();
             if (distance.sqrMagnitude <= _seat.maxRange * _seat.maxRange)
             {
-                UnityEngine.Debug.Log(IsOnNavmesh(_seat, out NavMeshHit _hit2));
                 if (IsOnNavmesh(_seat, out NavMeshHit _hit))
                 {
                     _path = new NavMeshPath();
