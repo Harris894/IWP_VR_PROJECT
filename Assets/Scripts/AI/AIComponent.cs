@@ -11,6 +11,7 @@ public class AIComponent : MonoBehaviour, IWeaponTarget, IEventSource
     public AIEventHandler eventHandler;
 
     internal AIState currentState = AIState.ENTERING;
+    internal MovementState currentMoveState = MovementState.IDLE;
     internal IDestination currentTarget = null;
 
     Animator animatorController;

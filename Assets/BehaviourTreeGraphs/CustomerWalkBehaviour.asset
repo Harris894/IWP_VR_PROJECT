@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Name: BT Set Agent Speed
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -1752, y: 248}
+  position: {x: -1752, y: 408}
   ports:
     keys:
     - outResult
@@ -147,7 +147,7 @@ MonoBehaviour:
       _dynamic: 0
   outResult: 0
   nodeDescription: 
-  desiredSpeed: 2
+  desiredSpeed: 1
 --- !u!114 &-6446081088517502738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -510,7 +510,7 @@ MonoBehaviour:
   m_Name: BT Set Move State
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -1752, y: 408}
+  position: {x: -1752, y: 248}
   ports:
     keys:
     - outResult
@@ -761,10 +761,10 @@ MonoBehaviour:
         node: {fileID: 7327667135887402793}
         reroutePoints: []
       - fieldName: outResult
-        node: {fileID: -6543075076773275760}
+        node: {fileID: 426728453312681821}
         reroutePoints: []
       - fieldName: outResult
-        node: {fileID: 426728453312681821}
+        node: {fileID: -6543075076773275760}
         reroutePoints: []
       - fieldName: outResult
         node: {fileID: -6008786126030662009}
