@@ -21,7 +21,6 @@ public class IdleState : StateMachineBehaviour
             {
                 animator.SetInteger(BTDefs.MOVEMENT_STATE, (int)MovementState.WALK);
             }
-            else animator.SetInteger(BTDefs.MOVEMENT_STATE, (int)MovementState.RUN);
         }
     }
 }

@@ -19,7 +19,7 @@ public class WalkState : StateMachineBehaviour
         {
             if (velocitySqrMagnitude > (walkSpeed * walkSpeed) + sqrTolerance)
             {
-                animator.SetInteger(BTDefs.MOVEMENT_STATE, (int)MovementState.RUN);
+                // animator.SetInteger(BTDefs.MOVEMENT_STATE, (int)MovementState.RUN);
             }
         }
         else animator.SetInteger(BTDefs.MOVEMENT_STATE, (int)MovementState.IDLE);

@@ -14,7 +14,6 @@ public enum MovementState
 {
     IDLE,
     WALK,
-    RUN,
 }
 
 public enum BTResult

@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public static class SeatManager
 {
     static List<Seat> availableSeatsList = new List<Seat>();
-    static List<Seat> SeatsInUseList = new List<Seat>();
+    static List<Seat> seatsInUseList = new List<Seat>();
 
     public static void RegisterSeat(Seat _seat) 
     {
@@ -38,7 +38,7 @@ public static class SeatManager
         if (validSeat != null) 
         {
             availableSeatsList.Remove(validSeat);
-            SeatsInUseList.Add(validSeat);
+            seatsInUseList.Add(validSeat);
         }
 
         return validSeat;
@@ -54,7 +54,7 @@ public static class SeatManager
         bool isValid = false;
         _path = null;
         
-        if (!_seat.IsOnCooldown() && _agent.behaviourTreeType == _seat.behaviourTreeType)
+        if (!_seat.IsOnCooldown() && _seat.IsAvailable() && _agent.behaviourTreeType == _seat.behaviourTreeType)
         {
             Vector3 distance = _seat.transform.position - _agent.GetPosition();
             if (distance.sqrMagnitude <= _seat.maxRange * _seat.maxRange)
@@ -92,9 +92,9 @@ public static class SeatManager
 
     public static void OnSeatExit(Seat _seat) 
     {
-        if (SeatsInUseList.Contains(_seat)) 
+        if (seatsInUseList.Contains(_seat)) 
         {
-            SeatsInUseList.Remove(_seat);
+            seatsInUseList.Remove(_seat);
             availableSeatsList.Add(_seat);
         }
     }

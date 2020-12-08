@@ -20,12 +20,13 @@ public class BTDestinationReached : BTNode
         agentPosition.y = 0;
         destinationPosition.y = 0;
 
-        if ((agentPosition - destinationPosition).sqrMagnitude < context.navAgent.height)
+        if ((agentPosition - destinationPosition).sqrMagnitude < 0.2f)
         {
             destination.OnDestinationReached();
+            context.contextOwner.transform.rotation = Quaternion.Euler(0, 0, 0);
+
             result = BTResult.SUCCESS;
         }
-            UnityEngine.Debug.Log((agentPosition - destinationPosition).sqrMagnitude);
 
         return result;
     }

@@ -13,7 +13,7 @@ public class Seat : MonoBehaviour, IDestination
     public BehaviourTreeType behaviourTreeType;
     public float cooldownTime = 0;
     
-    internal bool seatTaken = false;
+    public bool seatTaken = false;
     internal bool shouldUpdateCooldown = true;
     float cooldownTimer = 0;
 
@@ -44,7 +44,7 @@ public class Seat : MonoBehaviour, IDestination
 
     public bool IsOnCooldown() { return cooldownTimer > 0; }
 
-    public bool IsAvailable() { return seatTaken; }
+    public bool IsAvailable() { return !seatTaken; }
 
     public void OnSeatReached()
     {
@@ -67,7 +67,6 @@ public class Seat : MonoBehaviour, IDestination
 
     public void OnDestinationReached()
     {
-        UnityEngine.Debug.Log(seatTaken);
         OnSeatReached();
     }
 }
